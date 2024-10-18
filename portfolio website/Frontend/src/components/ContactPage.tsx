@@ -41,7 +41,7 @@ const ContactPage = () => {
 
   return (
     <Box
-      width={{ base: "100%", md: "530px" }}
+      width={{ base: "100%", md: "1030px" }}
       height={{ base: "100%", md: "auto" }}
       paddingX={{ base: "20px", md: "0px" }}
       display="flex"
