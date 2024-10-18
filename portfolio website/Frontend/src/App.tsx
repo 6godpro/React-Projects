@@ -3,7 +3,7 @@ import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import { Box } from "@chakra-ui/react";
 import { Element } from "react-scroll";
-import SkillArea from "./components/SkillArea";
+import SkillArea from "./components/Skills";
 
 function App() {
   return (
