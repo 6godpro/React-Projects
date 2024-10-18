@@ -3,14 +3,16 @@ import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import { Box } from "@chakra-ui/react";
 import { Element } from "react-scroll";
+import SkillArea from "./components/SkillArea";
 
 function App() {
   return (
     <Box overflowX="hidden">
-      <Element name="top"></Element>
-      <NavBar></NavBar>
-      <Hero></Hero>
-      <Footer></Footer>
+      <Element name="top" />
+      <NavBar />
+      <Hero />
+      <SkillArea />
+      <Footer />
     </Box>
   );
 }
