@@ -1,0 +1,8 @@
+.carousel .slide {
+  transform: scale(0.95); /* Make all slides smaller */
+  transition: transform 0.5s ease-in-out; /* Smooth scaling */
+}
+
+.carousel .slide.selected {
+  transform: scale(1); /* Make the center slide full-size */
+}
