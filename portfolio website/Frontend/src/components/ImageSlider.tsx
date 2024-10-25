@@ -35,5 +35,3 @@ const ImageSlider = () => {
 };
 
 export default ImageSlider;
-
-// https://react-responsive-carousel.js.org/storybook/?path=/story/01-basic--center-mode&knob-centerSlidePercentage_Main=80&knob-showArrows_Toggles=true&knob-showStatus_Toggles=&knob-showIndicators_Toggles=true&knob-infiniteLoop_Toggles=true&knob-showThumbs_Toggles=&knob-useKeyboardArrows_Toggles=true&knob-autoPlay_Toggles=true&knob-stopOnHover_Toggles=true&knob-swipeable_Toggles=true&knob-dynamicHeight_Toggles=true&knob-emulateTouch_Toggles=true&knob-autoFocus_Toggles=&knob-thumbWidth_Values=100&knob-selectedItem_Values=0&knob-interval_Values=2000&knob-transitionTime_Values=500&knob-swipeScrollTolerance_Values=5
