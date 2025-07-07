@@ -1,0 +1,13 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 10px 150px;
+  border-top: 1px solid rgba(128, 128, 128, 0.561);
+  margin: 0 auto;
+  width: 90%;
+}
+
+.footer p {
+  font-size: x-small;
+  color: #00000093;
+}

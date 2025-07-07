@@ -1,0 +1,77 @@
+.project-card {
+  width: 500px;
+  height: 600px;
+  background-color: inherit;
+  border-radius: 10px;
+  border: 1px solid rgba(128, 128, 128, 0.187);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project-card:hover {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover .image {
+  transform: scale(1.05);
+  border: none;
+}
+
+.image {
+  flex-basis: 50%;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.5s ease-in-out;
+}
+
+.project-card .details {
+  padding: 20px;
+}
+
+.project-card .details h3 {
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.project-card .details p {
+  font-size: x-small;
+  color: var(--secondary-text);
+  max-width: 80%;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.project-card .details span {
+  color: var(--secondary-text);
+  font-size: small;
+  cursor: pointer;
+  display: block;
+  margin-top: 2.5rem;
+}
+
+.project-card .details span:hover {
+  color: #000;
+  transition: 0.5s;
+}
+
+.techs {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.tech {
+  background: rgba(128, 128, 128, 0.187);
+  border-radius: 4px;
+  font-size: xx-small;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+  color: #00000093;
+}

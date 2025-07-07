@@ -1,0 +1,73 @@
+.navigation {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  background: var(--hero-color);
+  z-index: 99999;
+  transition: top 0.3s ease-in;
+}
+
+.scrolled {
+  background: transparent;
+  backdrop-filter: blur(77px);
+  border-bottom: 2px solid rgba(128, 128, 128, 0.364);
+  top: 5px;
+}
+
+.logo {
+  font-size: large;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--secondary-text);
+  margin: 0 2rem;
+  text-align: center;
+  position: relative;
+  display: flex;
+}
+
+.hover-animation {
+  position: absolute;
+  width: 0;
+  height: 0.1rem;
+  background-color: var(--primary);
+  bottom: -4px;
+}
+
+.scrolled .hover-animation {
+  background-color: #fff;
+}
+
+.scrolled .nav-link {
+  mix-blend-mode: difference;
+}
+
+.nav-link:hover .hover-animation {
+  width: 100%;
+  transition: all 0.5s;
+}
+
+@media screen and (max-width: 700px) {
+  .navigation {
+    justify-content: center;
+  }
+  .nav-links {
+    display: none;
+  }
+}

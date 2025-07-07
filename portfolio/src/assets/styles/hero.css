@@ -1,0 +1,95 @@
+.hero {
+  height: calc(100vh - 77px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5rem;
+  background: var(--hero-color);
+  overflow: hidden;
+}
+
+.hero .left {
+  flex-basis: 60%;
+  padding-left: 1rem;
+  z-index: 2;
+}
+
+.hero .left h1 {
+  font-size: 3.5rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  max-width: 70%;
+  padding-bottom: 0.2rem;
+  color: var(--primary);
+  height: 240px;
+}
+.hero .left p {
+  font-size: 1.1rem;
+  color: var(--primary);
+  padding-bottom: 1rem;
+  max-width: fit-content;
+}
+
+.hero .left .intro {
+  font-size: 0.8rem;
+  color: var(--secondary-text);
+  padding-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.hero-btn {
+  display: flex;
+  gap: 1rem;
+  max-width: fit-content;
+}
+
+.socials {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.7rem;
+  margin: 1rem 0;
+  max-width: fit-content;
+}
+
+.socials a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.blob {
+  fill:#F68537;
+  width: 30vmax;
+  z-index: 0;
+  animation: move 10s ease-in-out infinite;
+  transform-origin: 10% 10%;
+}
+
+@keyframes move {
+  0% {
+    transform: scale(1.5) translate(10px, -30px) rotate(0deg);
+  }
+  28% {
+    transform: scale(0.8, 1) translate(40px, 30vh) rotate(45deg);
+  }
+  40% {
+    transform: scale(0.8, 1) translate(40px, 30vh) rotate(90deg);
+  }
+  80% {
+    transform: scale(1.6) translate(40px, 50vh) rotate(270deg);
+  }
+  100% {
+    transform: scale(1.5) translate(10px, -30px) rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .hero {
+    display: block;
+  }
+
+  .hero-btn {
+    display: block;
+    gap: 0.5rem;
+  }
+}

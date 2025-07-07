@@ -1,0 +1,37 @@
+.button {
+  transition: transform 0.3s ease;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+.button button {
+  display: block;
+  text-decoration: none;
+  border-radius: 8px;
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.primary {
+  color: #fff;
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.primary:hover {
+  background-color: rgba(59, 6, 10, 0.9);
+  border: 1px solid rgba(59, 6, 10, 0.3);
+}
+
+.secondary {
+  border: 1px solid rgba(128, 128, 128, 0.541);
+  color: var(--primary);
+}
+
+.secondary:hover {
+  background-color: rgba(128, 128, 128, 0.541);
+}

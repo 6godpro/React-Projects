@@ -1,0 +1,68 @@
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem auto;
+  width: 90vw;
+}
+
+.contact .details {
+  margin-top: 2rem;
+}
+
+.contact-left,
+.contact-right {
+  flex-basis: 48%;
+  padding: 10px;
+}
+
+.contact-right p {
+  font-size: small;
+  color: var(--secondary-text);
+  margin-bottom: 2rem;
+}
+
+.contact-left {
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  gap: 1rem;
+}
+
+.contact-left form input,
+.contact-left form textarea {
+  width: 80%;
+  padding: 10px;
+  font-size: x-small;
+  border: 1px solid rgba(128, 128, 128, 0.295);
+  background-color: rgba(255, 255, 255, 0.438);
+  border-radius: 10px;
+}
+
+.contact-left form input:focus,
+.contact-left form textarea:focus {
+  border: none;
+}
+
+.contact-left form textarea {
+  height: 100px;
+  max-height: 100px;
+  width: 80%;
+  max-width: 80%;
+}
+
+.contact-right .social-cards {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}

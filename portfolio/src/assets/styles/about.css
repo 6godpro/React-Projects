@@ -1,0 +1,78 @@
+.about {
+  margin: 2rem auto;
+  display: grid;
+  grid-row: auto auto;
+  row-gap: 2rem;
+  width: 90%;
+}
+
+.about-btn {
+  width: fit-content;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.content .left {
+  justify-self: center;
+  align-self: center;
+  max-width: 80%;
+  text-align: justify;
+}
+
+.content .left p {
+  margin-bottom: 2rem;
+  color: var(--secondary-text);
+  font-size: small;
+}
+
+.content .right {
+  justify-self: flex-start;
+  margin-left: 5rem;
+}
+
+.right {
+  position: relative;
+}
+
+.main-photo,
+.bottom-corner,
+.top-corner {
+  width: 500px;
+  height: 500px;
+}
+
+.main-photo {
+  clip-path: path(
+    "M 140,0 L 480,0 A 20,20 0 0 1 500,20 L 500,420 A 20,20 0 0 1 480,440 L 300,440 A 20,20 0,0,0 280,460 L 280,480 A 20,20 0 0 1 260,500 L 20,500 A 20,20 0 0 1 0,480 L 0,100 A 20,20 0 0 1 20,80 L 120,80 A 20,20 0 0 0 140,60 L 140,20 A 20,20 0 0 1 160,0 Z"
+  );
+}
+
+.main-photo img,
+.bottom-corner img,
+.top-corner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.top-corner,
+.bottom-corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.top-corner {
+  clip-path: path(
+    "M 20,0 L 120,0 A 10,10 0 0 1 130,10 L 130,50 A 20,20 0 0 1 110,70 L 10,70 A 10,10 0 0 1 0,60 L 0,20 A 20,20 0 0 1 20,0 Z"
+  );
+}
+
+.bottom-corner {
+  clip-path: path(
+    "M 300,450 L 490,450 A 10,10 0 0 1 500,460 L 500,480 A 20,20 0 0 1 480,500 L 300,500 A 10,10 0 0 1 290,490 L 290,470 A 20,20 0 0 1 310,450 Z"
+  );
+}
