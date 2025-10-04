@@ -36,8 +36,8 @@ const Contact = () => {
         "8fyGZVkg62uXJ5QNP"
       )
       .then(() => {
-        alert("Message sent");
         reset();
+        alert("Message sent");
       })
       .catch(() => {
         alert("Message sending failed");
@@ -62,6 +62,7 @@ const Contact = () => {
             <div className="name-group">
               <input
                 type="text"
+                placeholder=" "
                 {...register("name", {
                   required: {
                     value: true,
@@ -75,6 +76,7 @@ const Contact = () => {
             <div className="email-group">
               <input
                 type="text"
+                placeholder=" "
                 {...register("email", {
                   required: {
                     value: true,
@@ -90,7 +92,10 @@ const Contact = () => {
               {errors?.email && <p>{errors.email.message}</p>}
             </div>
             <div className="message-group">
-              <textarea {...register("message", { required: true })} />
+              <textarea
+                {...register("message", { required: true })}
+                placeholder=" "
+              />
               <label htmlFor="message">Message</label>
             </div>
             <Button
