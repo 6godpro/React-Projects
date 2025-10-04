@@ -27,7 +27,7 @@ const Button = ({
         className={primary ? "primary" : "secondary"}
         style={{
           padding:
-            paddingX && paddingY ? `${paddingX} ${paddingY}` : ".8rem 2rem",
+            paddingX && paddingY ? `${paddingY} ${paddingX}` : ".8rem 2rem",
           fontSize: fontSize ? fontSize : "x-small",
         }}
       >

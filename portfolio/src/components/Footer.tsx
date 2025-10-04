@@ -1,10 +1,14 @@
-import '../assets/styles/footer.css'
-
+import "../assets/styles/footer.css";
 
 const Footer = () => {
   return (
-    <div className="footer"><p>&copy; 2025 Frontend Developer. Built with React & TypeScript.</p></div>
-  )
-}
+    <div className="footer">
+      <p>
+        &copy; 2025 Frontend Developer. Built with React, TypeScript, GSAP &
+        Framer-Motion.
+      </p>
+    </div>
+  );
+};
 
-export default Footer
+export default Footer;

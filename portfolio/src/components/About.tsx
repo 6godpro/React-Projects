@@ -1,108 +1,59 @@
 import "../assets/styles/about.css";
-import Button from "./UI/Button";
-import Header from "./UI/Header";
-import profile from "../assets/images/profile.png";
-import { GoDownload } from "react-icons/go";
-import { useEffect, useRef } from "react";
+import Header from "./ui/Header";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  const bottomRef = useRef<HTMLDivElement>(null);
-  const topRef = useRef<HTMLDivElement>(null);
-  const mainPhotoRef = useRef<HTMLDivElement>(null);
-  const boxRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    gsap.fromTo(
-      boxRef.current,
-      { scale: 1, opacity: 1 },
-      {
-        scale: 0.5,
-        opacity: 0.6,
-        scrollTrigger: {
-          trigger: boxRef.current,
-          start: "top 10%",
-          end: "bottom 20%",
-          scrub: true,
-        },
-      }
-    );
-  }, []);
-
-  useEffect(() => {
-    gsap.to(mainPhotoRef.current, {
-      rotation: -360,
-      ease: "none",
-      scrollTrigger: {
-        trigger: mainPhotoRef.current,
-        start: "top bottom",
-        end: "top 20%",
-        scrub: true,
-      },
-    });
-
-    gsap.to(bottomRef.current, {
-      rotation: 360,
-      ease: "none",
-      scrollTrigger: {
-        trigger: bottomRef.current,
-        start: "top bottom",
-        end: "top 20%",
-        scrub: true,
-      },
-    });
-
-    gsap.to(topRef.current, {
-      rotation: 360,
-      ease: "none",
-      scrollTrigger: {
-        trigger: topRef.current,
-        start: "top bottom",
-        end: "top 20%",
-        scrub: true,
-      },
-    });
-  }, []);
+  const skills = [
+    "GSAP, Framer Motion, & Chakra UI",
+    "Performance Optimization",
+    "Modern CSS & Tailwind",
+    "React & TypeScript",
+    "Responsive Design",
+  ];
 
   return (
-    <div ref={boxRef} className="about">
+    <section id="about">
       <Header content="About Me" />
       <div className="content">
-        <div className="left">
+        <div className="about-me">
           <p>
-            I'm a passionate frontend developer with a love for creating
-            beautiful, functional web experiences. I believe in writing clean,
-            maintainable code and staying up-to-date with the latest
-            technologies. <br />
-            <br />
-            When I'm not coding, you can find me exploring new design trends,
-            contributing to open-source projects, or sharing knowledge with the
-            developer community.
+            I'm a passionate Frontend Developer with over 3 years of experience
+            creating digital experiences that combine beautiful design with
+            cutting-edge technology. I specialize in building responsive,
+            accessible, and performant web applications using modern frameworks
+            and tools.
           </p>
-          <div className="about-btn">
-            <Button
-              buttonText="Download My Resume"
-              primary
-              icon={<GoDownload />}
-            />
-          </div>
+          <p>
+            My approach blends technical expertise with design thinking,
+            ensuring that every project not only functions flawlessly but also
+            provides an exceptional user experience. I believe that great
+            interfaces are invisible, they work so well that users don't have to
+            think about them.
+          </p>
         </div>
-        <div className="right">
-          <div ref={topRef} className="top-corner">
-            <img src={profile} alt="profile-photo" />
-          </div>
-          <div ref={bottomRef} className="bottom-corner">
-            <img src={profile} alt="profile-photo" />
-          </div>
-          <div ref={mainPhotoRef} className="main-photo">
-            <img src={profile} alt="profile-photo" />
+        <div className="skill-section">
+          <h3>Key Highlights</h3>
+          <div className="skills">
+            {skills.map((skill, index) => (
+              <motion.div
+                key={skill}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="skill"
+              >
+                {skill}
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

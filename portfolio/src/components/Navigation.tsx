@@ -1,38 +1,108 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { MdOutlineMenu, MdClose } from "react-icons/md";
 import "../assets/styles/navigation.css";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 
 const Navigation = () => {
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState("home");
+  const navLinks = ["home", "about", "projects", "contact"];
+  const [open, setOpen] = useState(false);
 
-  useEffect(()=> {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+  const toggleSideNav = () => {
+    setOpen(!open);
+  };
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const navbar = document.getElementById("navigation");
+    const rect = navbar?.getBoundingClientRect();
+    const { top: navbarTop, height: navbarHeight } = rect
+      ? rect
+      : { top: 0, height: 0 };
+    const section = document.getElementById(
+      e.currentTarget.innerText.toLowerCase()
+    );
+
+    if (section) {
+      toggleSideNav();
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: sectionTop - navbarHeight - navbarTop,
+        behavior: "smooth",
+      });
     }
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll)
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navLinks.map((id) => document.getElementById(id));
+      const scrollY = window.scrollY + 120;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && scrollY >= section.offsetTop) {
+          setActiveSection(navLinks[i]);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
-  const navItems = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#projects", label: "Projects" },
-    { href: "#contact", label: "Contact" },
-  ];
 
   return (
-    <div className={isScrolled ? "navigation scrolled" : "navigation"}>
-      <div className="logo">&lt;dotdev /&gt;</div>
-      <div className="nav-links">
-        {navItems.map((item) => (
-          <a key={item.href} href={item.href} className="nav-link">
-            {item.label}
-            <span className="hover-animation"></span>
+    <div id="navigation">
+      <div className="logo">&lt;Elijah /&gt;</div>
+      <nav className="navbar">
+        {navLinks.map((id) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            onClick={handleClick}
+          >
+            {id.charAt(0).toUpperCase() + id.slice(1)}
+            <span
+              className={`hover-animation ${
+                activeSection === id ? "span-active" : ""
+              }`}
+            />
           </a>
         ))}
+      </nav>
+      <div className="mobile-nav">
+        <MdOutlineMenu size={24} onClick={toggleSideNav} />
+        {open && <div className="backdrop show" onClick={toggleSideNav} />}
+        <div className={`side-nav ${open ? "open" : ""}`}>
+          <div className="side-nav-header">
+            <div className="side-nav-logo">&lt;Elijah /&gt;</div>
+            <MdClose size={24} onClick={toggleSideNav} />
+          </div>
+          <nav>
+            {navLinks.map((id) => (
+              <a
+                key={id}
+                href={`#${id}`}
+                className={activeSection === id ? "active" : ""}
+                onClick={handleClick}
+              >
+                {id.charAt(0).toUpperCase() + id.slice(1)}
+              </a>
+            ))}
+          </nav>
+          <div className="side-nav-socials">
+            <a
+              href="https://www.linkedin.com/in/elijah-eromosele-146b5923b"
+              target="_blank"
+            >
+              <FaLinkedinIn />
+            </a>
+            <a href="https://www.github.com/6godpro" target="_blank">
+              <FaGithub />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   );

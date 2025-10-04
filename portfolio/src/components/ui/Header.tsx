@@ -12,10 +12,10 @@ const Header = ({content}: Props) => {
         style={{
           width: "150px",
           height: "4px",
-          background: "#3B060A",
+          background: "#ededed",
           margin: "0 auto",
         }}
-      ></div>
+      />
     </div>
   );
 };

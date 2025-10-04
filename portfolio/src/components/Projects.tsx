@@ -1,50 +1,33 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import "../assets/styles/project.css";
-import Header from "./UI/Header";
-import ProjectCard from "./UI/ProjectCard";
+import Header from "./ui/Header";
+import ProjectCard from "./ui/ProjectCard";
+import { motion } from "framer-motion";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
   const boxRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    gsap.fromTo(
-      boxRef.current,
-      { scale: 1, opacity: 1 },
-      {
-        scale: 0.5,
-        opacity: 0.6,
-        scrollTrigger: {
-          trigger: boxRef.current,
-          start: "top 10%",
-          end: "bottom 20%",
-          scrub: true,
-        },
-      }
-    );
-  }, []);
-
   const projects = [
     {
-      title: "E-commerce Platform",
+      title: "Radiance Reach Charity Foundation",
       description:
-        "A modern e-commerce platform built with React and TypeScript, featuring a clean design and smooth user experience.",
+        "A responsive web platform for Radiance Reach Charity Foundation — empowering communities through education, healthcare, and outreach initiatives.",
       tech: ["React", "TypeScript", "Tailwind CSS", "Node.js"],
-      github: "https://github.com",
-      demo: "https://example.com",
-      image:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop&crop=top",
+      github: "https://github.com/6godpro/Radiance-Reach-Foundation/",
+      demo: "https://radiance-reach-foundation.pages.dev/",
+      image: "/landing_page.png",
     },
     {
       title: "Task Management App",
       description:
         "A productivity app with drag-and-drop functionality, real-time updates, and collaborative features.",
       tech: ["Next.js", "React", "MongoDB", "Socket.io"],
-      github: "https://github.com",
-      demo: "https://example.com",
+      github: "",
+      demo: "",
       image:
         "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop&crop=top",
     },
@@ -53,24 +36,34 @@ const Projects = () => {
       description:
         "A responsive weather application with interactive charts and location-based forecasts.",
       tech: ["React", "API Integration", "Chart.js", "CSS3"],
-      github: "https://github.com",
-      demo: "https://example.com",
+      github: "",
+      demo: "",
       image:
         "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop&crop=top",
     },
   ];
   return (
-    <div ref={boxRef} className="projects-container">
+    <div ref={boxRef} id="projects">
       <Header content="Featured Projects" />
-      <div className="projects">
-        {projects.map((project) => (
-          <ProjectCard
+      <div className="works">
+        {projects.map((project, index) => (
+          <motion.div
             key={project.title}
-            title={project.title}
-            description={project.description}
-            techs={project.tech}
-            image={project.image}
-          />
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1 }}
+          >
+            <ProjectCard
+              key={project.title}
+              title={project.title}
+              description={project.description}
+              techs={project.tech}
+              image={project.image}
+              github={project.github}
+              demo={project.demo}
+            />
+          </motion.div>
         ))}
       </div>
     </div>

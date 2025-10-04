@@ -2,10 +2,15 @@ import { useForm } from "react-hook-form";
 import { GoMail } from "react-icons/go";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import emailjs from "emailjs-com";
-import Button from "./UI/Button";
-import Header from "./UI/Header";
-import SocialCard from "./UI/SocialCard";
+import Button from "./ui/Button";
+import Header from "./ui/Header";
 import "../assets/styles/contact.css";
+import SocialCard from "./ui/SocialCard";
+import {
+  MdOutlineMailOutline,
+  MdOutlinePhone,
+  MdOutlineMyLocation,
+} from "react-icons/md";
 
 const Contact = () => {
   const socials = [
@@ -27,6 +32,7 @@ const Contact = () => {
   ];
 
   interface FormValues {
+    name: string;
     email: string;
     message: string;
   }
@@ -59,55 +65,93 @@ const Contact = () => {
   };
 
   return (
-    <div className="contact">
+    <section id="contact">
       <Header content="Let's Work Together" />
-      <div className="details">
-        <div className="contact-left">
+      <p>Ready to bring your ideas to life? Let's collaborate on your next project.</p>
+      <div className="content">
+        <div className="form">
+          <h2>Send me a message 👋 </h2>
+          <p>
+            I'd love to hear about your project and discuss how we can work
+            together.
+          </p>
           <form action="" onSubmit={handleSubmit(onSubmit)}>
-            <input
-              type="text"
-              placeholder="Enter email"
-              {...register("email", {
-                required: true,
-                pattern: {
-                  value: /^[a-zA-Z0-9_]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/i,
-                  message: "Sorry, that doesn't look like a valid email.",
-                },
-              })}
-            />
-            {errors?.email && <p>{errors.email.message}</p>}
-            <textarea
-              placeholder="Message here..."
-              {...register("message", { required: true })}
-            ></textarea>
+            <div className="name-group">
+              <input
+                type="text"
+                {...register("name", {
+                  required: {
+                    value: true,
+                    message: "Please enter your full name",
+                  },
+                })}
+              />
+              <label htmlFor="name">Name</label>
+              {errors?.name && <p>{errors.name.message}</p>}
+            </div>
+            <div className="email-group">
+              <input
+                type="text"
+                {...register("email", {
+                  required: {
+                    value: true,
+                    message: "Please enter your email",
+                  },
+                  pattern: {
+                    value: /^[a-zA-Z0-9_]+@[a-zA-Z0-9]+\.[a-zA-Z]{2,}$/i,
+                    message: "Sorry, that doesn't look like a valid email.",
+                  },
+                })}
+              />
+              <label htmlFor="email">Email</label>
+              {errors?.email && <p>{errors.email.message}</p>}
+            </div>
+            <div className="message-group">
+              <textarea {...register("message", { required: true })} />
+              <label htmlFor="message">Message</label>
+            </div>
             <Button
               primary
               type="submit"
               buttonText="Send Message"
-              fontSize="x-small"
-              paddingX=".5rem"
-              paddingY="2rem"
+              fontSize="small"
+              paddingX="5rem"
+              paddingY=".5rem"
             />
           </form>
         </div>
-        <div className="contact-right">
-          <p>
-            I'm always interested in new opportunities and exciting projects.
-            Feel free to reach out if you'd like to collaborate!
-          </p>
-          <div className="social-cards">
-            {socials.map((social) => (
+        <div className="connect">
+          <h2>Let's connect 🧲</h2>
+          <div className="connect-content">
+            <p>
+              Feel free to reach out through any of these channels. I am always
+              excited to discuss new opportunities.
+            </p>
+            <div>
               <SocialCard
-                key={social.text}
-                icon={social.icon}
-                subText={social.subText}
-                text={social.text}
+                text="ehiseromz@gmail.com"
+                icon={<MdOutlineMailOutline />}
+                subText="Email"
               />
-            ))}
+            </div>
+            <div>
+              <SocialCard
+                text="+2347064567012"
+                icon={<MdOutlinePhone />}
+                subText="Phone"
+              />
+            </div>
+            <div>
+              <SocialCard
+                text="Lagos, NG"
+                icon={<MdOutlineMyLocation />}
+                subText="Location"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -10,8 +10,10 @@ const SocialCard = ({ text, subText, icon }: Props) => {
   return (
     <div className="social-card">
       <div className="social-logo">{icon}</div>
-      <h3>{text}</h3>
-      <a href={`https://linkedin.com/${subText}`} target="_blank">{subText}</a>
+      <div>
+        <span>{subText}</span>
+        <p>{text}</p>
+      </div>
     </div>
   );
 };

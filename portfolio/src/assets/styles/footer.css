@@ -1,13 +1,21 @@
 .footer {
   display: flex;
   justify-content: center;
-  padding: 10px 150px;
+  align-items: center;
+  padding: 10px 0;
   border-top: 1px solid rgba(128, 128, 128, 0.561);
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
+  text-align: center;
 }
 
 .footer p {
-  font-size: x-small;
-  color: #00000093;
+  font-size: small;
+  color: var(--secondary-text);
+}
+
+@media screen and (min-width: 768px) {
+  .footer p {
+    font-size: medium;
+  }
 }

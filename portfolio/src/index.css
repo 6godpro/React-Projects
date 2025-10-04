@@ -1,11 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap");
 
 :root {
-  --primary: #3b060a;
-  --secondary-text: #05306d;
-  --hero-color: #EAD8A4;
-  --background-color: #f5f5e8;
-
+  --secondary-text: #ededed;
+  --background-color: #0C0C0C;
+  --border-border: rgba(128, 128, 128, 0.187);
 }
 
 * {
@@ -17,6 +15,7 @@
 
 body {
   background: var(--background-color);
+  color: var(--secondary-text);
 }
 
 a {

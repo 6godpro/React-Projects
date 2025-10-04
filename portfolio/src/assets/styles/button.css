@@ -1,37 +1,63 @@
 .button {
   transition: transform 0.3s ease;
-}
-
-.button:hover {
-  transform: scale(1.05);
+  touch-action: manipulation;
 }
 
 .button button {
+  position: relative;
   display: block;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 40px;
   max-width: fit-content;
   display: flex;
   align-items: center;
-  gap: .5rem;
+  gap: 0.5rem;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.button button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: white;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.button .secondary::before {
+  position: absolute;
+  right: 0;
+  background: rgba(128, 128, 128, 0.2);
 }
 
 .primary {
-  color: #fff;
-  background-color: var(--primary);
-  border: 1px solid var(--primary);
-}
-
-.primary:hover {
-  background-color: rgba(59, 6, 10, 0.9);
-  border: 1px solid rgba(59, 6, 10, 0.3);
+  color: black;
+  background-color: var(--secondary-text);
+  border: 1px solid var(--border-border);
 }
 
 .secondary {
-  border: 1px solid rgba(128, 128, 128, 0.541);
-  color: var(--primary);
+  border: 1px solid var(--border-border);
+  color: var(--secondary-text);
+  background-color: var(--background-color);
 }
 
-.secondary:hover {
-  background-color: rgba(128, 128, 128, 0.541);
+@media (hover: hover) and (pointer: fine) {
+  button:hover::before {
+    width: 100%;
+  }
+
+  .secondary:hover {
+    color: var(--secondary-text);
+  }
+}
+
+.primary:active,
+.secondary:active {
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
 }
