@@ -1,10 +1,6 @@
 import "../assets/styles/about.css";
 import Header from "./ui/Header";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   const skills = [

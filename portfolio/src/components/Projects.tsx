@@ -1,12 +1,8 @@
 import { useRef } from "react";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import gsap from "gsap";
 import "../assets/styles/project.css";
 import Header from "./ui/Header";
 import ProjectCard from "./ui/ProjectCard";
 import { motion } from "framer-motion";
-
-gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
   const boxRef = useRef<HTMLDivElement>(null);

@@ -1,15 +1,11 @@
 import Button from "./ui/Button";
 import { GoStar, GoDownload } from "react-icons/go";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import gsap from "gsap";
-import TextPlugin from "gsap/TextPlugin";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import "../assets/styles/hero.css";
 import "../assets/images/hero.png";
 import { useRef } from "react";
 import LightRays from "./LightRays";
 
-gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
 const Hero = () => {
   const boxRef = useRef<HTMLDivElement>(null);

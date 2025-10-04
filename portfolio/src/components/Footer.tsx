@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <p>
-        &copy; 2025 Frontend Developer. Built with React, TypeScript, GSAP &
+        &copy; 2025 Frontend Developer. Built with React, TypeScript &
         Framer-Motion.
       </p>
     </div>

@@ -1,6 +1,4 @@
 import { useForm } from "react-hook-form";
-import { GoMail } from "react-icons/go";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
 import emailjs from "emailjs-com";
 import Button from "./ui/Button";
 import Header from "./ui/Header";
@@ -13,24 +11,6 @@ import {
 } from "react-icons/md";
 
 const Contact = () => {
-  const socials = [
-    {
-      text: "Email",
-      subText: "ehiseromz@gmail.com",
-      icon: <GoMail />,
-    },
-    {
-      text: "GitHub",
-      subText: "6godpro",
-      icon: <FaGithub />,
-    },
-    {
-      text: "LinkedIn",
-      subText: "Connect with me",
-      icon: <FaLinkedin />,
-    },
-  ];
-
   interface FormValues {
     name: string;
     email: string;
@@ -67,7 +47,10 @@ const Contact = () => {
   return (
     <section id="contact">
       <Header content="Let's Work Together" />
-      <p>Ready to bring your ideas to life? Let's collaborate on your next project.</p>
+      <p>
+        Ready to bring your ideas to life? Let's collaborate on your next
+        project.
+      </p>
       <div className="content">
         <div className="form">
           <h2>Send me a message 👋 </h2>
