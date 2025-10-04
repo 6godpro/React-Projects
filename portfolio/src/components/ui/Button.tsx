@@ -9,6 +9,7 @@ interface Props {
   fontSize?: string;
   paddingX?: string;
   paddingY?: string;
+  loading?: boolean;
 }
 
 const Button = ({
@@ -19,10 +20,12 @@ const Button = ({
   fontSize,
   paddingX,
   paddingY,
+  loading,
 }: Props) => {
   return (
     <div className="button">
       <button
+        inert={loading}
         type={type}
         className={primary ? "primary" : "secondary"}
         style={{

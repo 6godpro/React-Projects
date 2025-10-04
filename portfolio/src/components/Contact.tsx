@@ -9,6 +9,7 @@ import {
   MdOutlinePhone,
   MdOutlineMyLocation,
 } from "react-icons/md";
+import { useState } from "react";
 
 const Contact = () => {
   interface FormValues {
@@ -26,8 +27,10 @@ const Contact = () => {
     mode: "onChange",
   });
 
+  const [loading, setLoading] = useState(false);
+
   const onSubmit = async (data: FormValues) => {
-    console.log(data);
+    setLoading(true);
     await emailjs
       .send(
         "service_ichkf3d",
@@ -36,10 +39,13 @@ const Contact = () => {
         "8fyGZVkg62uXJ5QNP"
       )
       .then(() => {
+        setLoading(false);
         reset();
         alert("Message sent");
       })
       .catch(() => {
+        setLoading(false);
+        reset();
         alert("Message sending failed");
       });
   };
@@ -100,6 +106,7 @@ const Contact = () => {
             </div>
             <Button
               primary
+              loading={loading}
               type="submit"
               buttonText="Send Message"
               fontSize="small"
