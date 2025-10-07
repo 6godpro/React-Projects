@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import emailjs from "emailjs-com";
 import Button from "./ui/Button";
 import Header from "./ui/Header";
 import "../assets/styles/contact.css";
@@ -10,6 +9,8 @@ import {
   MdOutlineMyLocation,
 } from "react-icons/md";
 import { useState } from "react";
+import Spinner from "./ui/Spinner";
+import sendMessage from "../utils/submitMessage";
 
 const Contact = () => {
   interface FormValues {
@@ -28,26 +29,16 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
-
   const onSubmit = async (data: FormValues) => {
     setLoading(true);
-    await emailjs
-      .send(
-        "service_ichkf3d",
-        "template_9mv0bjq",
-        { from_email: data.email, message: data.message },
-        "8fyGZVkg62uXJ5QNP"
-      )
-      .then(() => {
-        setLoading(false);
-        reset();
-        alert("Message sent");
-      })
-      .catch(() => {
-        setLoading(false);
-        reset();
-        alert("Message sending failed");
-      });
+    try {
+      await sendMessage(data);
+      reset();
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -81,7 +72,7 @@ const Contact = () => {
             </div>
             <div className="email-group">
               <input
-                type="text"
+                type="email"
                 placeholder=" "
                 {...register("email", {
                   required: {
@@ -107,8 +98,9 @@ const Contact = () => {
             <Button
               primary
               loading={loading}
+              icon={loading ? <Spinner /> : <></>}
               type="submit"
-              buttonText="Send Message"
+              buttonText={loading ? "" : "Send Message"}
               fontSize="small"
               paddingX="5rem"
               paddingY=".5rem"
