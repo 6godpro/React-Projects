@@ -1,16 +1,17 @@
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Button from "./ui/Button";
 import Header from "./ui/Header";
-import "../assets/styles/contact.css";
 import SocialCard from "./ui/SocialCard";
+import Spinner from "./ui/Spinner";
+import sendMessage from "@/utils/submitMessage";
+import { notifyLoading, updateNotify } from "./utils/toast";
+import "@/assets/styles/contact.css";
 import {
   MdOutlineMailOutline,
   MdOutlinePhone,
   MdOutlineMyLocation,
 } from "react-icons/md";
-import { useState } from "react";
-import Spinner from "./ui/Spinner";
-import sendMessage from "../utils/submitMessage";
 
 const Contact = () => {
   interface FormValues {
@@ -31,11 +32,28 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const onSubmit = async (data: FormValues) => {
     setLoading(true);
+    const id = notifyLoading(
+      "Sending Message",
+      "Your message is being delivered."
+    );
+
     try {
       await sendMessage(data);
       reset();
+      updateNotify(
+        id,
+        "Message sent",
+        "Your message was sent successfully!",
+        "success"
+      );
     } catch (error) {
       console.error(error);
+      updateNotify(
+        id,
+        "Message not delivered",
+        "There was an error in delivering your message.",
+        "error"
+      );
     } finally {
       setLoading(false);
     }
