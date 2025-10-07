@@ -1,8 +1,8 @@
 import Button from "./ui/Button";
 import { GoStar, GoDownload } from "react-icons/go";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import "../assets/styles/hero.css";
-import "../assets/images/hero.png";
+import "@/assets/styles/hero.css";
+import "@/assets/images/hero.png";
 import { useRef } from "react";
 import LightRays from "./LightRays";
 

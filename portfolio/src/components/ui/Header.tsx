@@ -1,4 +1,4 @@
-import '../../assets/styles/header.css'
+import '@/assets/styles/header.css'
 
 interface Props {
   content: string;

@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import "../assets/styles/project.css";
+import "@/assets/styles/project.css";
 import Header from "./ui/Header";
 import ProjectCard from "./ui/ProjectCard";
 import { motion } from "framer-motion";

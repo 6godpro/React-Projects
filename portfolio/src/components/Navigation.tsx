@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { MdOutlineMenu, MdClose } from "react-icons/md";
-import "../assets/styles/navigation.css";
+import "@/assets/styles/navigation.css";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 
 const Navigation = () => {

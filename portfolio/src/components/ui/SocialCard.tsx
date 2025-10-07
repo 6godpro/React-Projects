@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import "../../assets/styles/socialCard.css";
+import "@/assets/styles/socialCard.css";
 
 interface Props {
   text: string;

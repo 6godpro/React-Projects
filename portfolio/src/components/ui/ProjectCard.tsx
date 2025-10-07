@@ -1,4 +1,4 @@
-import "../../assets/styles/projectCard.css";
+import "@/assets/styles/projectCard.css";
 import { FaGithub, FaEye } from "react-icons/fa";
 
 interface Props {

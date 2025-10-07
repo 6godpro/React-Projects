@@ -1,4 +1,4 @@
-import "../assets/styles/about.css";
+import "@/assets/styles/about.css";
 import Header from "./ui/Header";
 import { motion } from "framer-motion";
 
