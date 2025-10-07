@@ -1,11 +1,11 @@
-import type { ReactNode } from "react";
+import type React from "react";
 import "../../assets/styles/button.css";
 
 interface Props {
   buttonText: string;
   primary?: boolean;
   type?: "submit" | "reset" | "button";
-  icon?: ReactNode;
+  icon?: React.ReactElement;
   fontSize?: string;
   paddingX?: string;
   paddingY?: string;
