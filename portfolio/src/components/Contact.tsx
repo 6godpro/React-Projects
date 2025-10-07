@@ -5,7 +5,7 @@ import Header from "./ui/Header";
 import SocialCard from "./ui/SocialCard";
 import Spinner from "./ui/Spinner";
 import sendMessage from "@/utils/submitMessage";
-import { notifyLoading, updateNotify } from "./utils/toast";
+import { notifyLoading, updateNotify } from "./ui/toast";
 import "@/assets/styles/contact.css";
 import {
   MdOutlineMailOutline,

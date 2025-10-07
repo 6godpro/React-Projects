@@ -1,6 +1,6 @@
 import { toast } from "react-toastify";
 import type { Id, TypeOptions } from "react-toastify";
-import ToastMessage from "../ui/ToastMessage";
+import ToastMessage from "@/components/ui/ToastMessage";
 
 export const notifyLoading = (title: string, content: string): Id =>
   toast.loading(<ToastMessage title={title} content={content} />, {
@@ -17,8 +17,6 @@ export const updateNotify = (
 ) =>
   toast.update(id, {
     render: <ToastMessage title={title} content={content} />,
-    position: "bottom-right",
-    ariaLabel: title.toLowerCase(),
     type,
     isLoading: false,
     autoClose: 5000,
