@@ -19,9 +19,9 @@
   padding-top: 6px;
 }
 .skills {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(auto-fit, 1fr));
-  gap: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
   margin: 1.5rem auto 0 auto;
 }
 
@@ -48,11 +48,6 @@
   .skill-section {
     text-align: center;
     font-size: 1.5rem;
-  }
-  .skills {
-    grid-template-columns: auto auto auto auto auto;
-    max-width: fit-content;
-    gap: 2rem;
   }
   .skill {
     font-size: medium;
