@@ -8,7 +8,7 @@ interface Props {
 }
 const SocialCard = ({ text, subText, icon }: Props) => {
   return (
-    <div className="social-card">
+    <div id="social-card">
       <div id="social-logo">{icon}</div>
       <div id="info">
         <span>{subText}</span>

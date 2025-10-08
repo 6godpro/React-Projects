@@ -1,4 +1,4 @@
-.social-card {
+#social-card {
   width: 100%;
   height: 40px;
   padding: 2.5rem 1rem;
@@ -18,13 +18,13 @@
   justify-content: center;
 }
 
-.social-card #info span {
+#social-card #info span {
   font-size: small;
   color: gray;
 }
 
-.social-card #info p {
-  margin-bottom: 0;
+#social-card #info p {
+  margin-bottom: unset;
   font-size: medium;
 }
 
