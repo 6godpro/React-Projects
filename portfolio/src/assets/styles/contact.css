@@ -57,7 +57,7 @@
   width: 100%;
   padding: 13px;
   font-size: 16px;
-  border: 1px solid rgba(128, 128, 128, 0.295);
+  border: 2px solid var(--background-color);
   background-color: var(--secondary-text);
   border-radius: 8px;
   outline: none;
@@ -92,7 +92,6 @@ form {
   left: 8px;
   padding: 0 5px;
   font-size: small;
-  background-color: var(--secondary-text);
   border-radius: 4px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -106,11 +105,12 @@ form {
   transform: translateY(-20px);
   color: #000;
   font-size: x-small;
+  background-color: var(--secondary-text);
 }
 .name-group input:focus,
 .email-group input:focus,
 .message-group textarea:focus {
-  border-color: #0051ff;
+  border-color: lightblue;
 }
 
 .form textarea {
