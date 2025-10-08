@@ -1,14 +1,15 @@
-import type React from "react";
 import "@/assets/styles/button.css";
+import type { CSSLengthValue } from "@/types/style";
+import { assertValidCSSLength } from "@/types/style";
 
 interface Props {
   buttonText: string;
   primary?: boolean;
   type?: "submit" | "reset" | "button";
   icon?: React.ReactElement;
-  fontSize?: string;
-  paddingX?: string;
-  paddingY?: string;
+  fontSize?: CSSLengthValue;
+  paddingX?: CSSLengthValue;
+  paddingY?: CSSLengthValue;
   loading?: boolean;
 }
 
@@ -22,6 +23,13 @@ const Button = ({
   paddingY,
   loading,
 }: Props) => {
+  // Validate props
+  if (process.env.NODE_ENV === "development") {
+    if (fontSize) assertValidCSSLength(fontSize, "fontSize");
+    if (paddingX) assertValidCSSLength(paddingX, "paddingX");
+    if (paddingY) assertValidCSSLength(paddingY, "paddingY");
+  }
+
   return (
     <div className="button">
       <button
