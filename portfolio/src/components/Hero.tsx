@@ -1,17 +1,19 @@
 import Button from "./ui/Button";
-import { GoStar, GoDownload } from "react-icons/go";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { GoDownload } from "react-icons/go";
+import { FaLinkedinIn, FaGithub, FaPhoneAlt } from "react-icons/fa";
 import "@/assets/styles/hero.css";
 import "@/assets/images/hero.png";
-import { useRef } from "react";
 import LightRays from "./LightRays";
-
+import { scrollToSection } from "@/utils/scrollToSection";
 
 const Hero = () => {
-  const boxRef = useRef<HTMLDivElement>(null);
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    scrollToSection("contact");
+  };
 
   return (
-    <section ref={boxRef} id="home">
+    <section id="home">
       <div className="home-content">
         <div className="memoji" inert>
           <img src="/profile_icon.png" alt="" />
@@ -23,17 +25,24 @@ const Hero = () => {
           GSAP/Framer Motion to deliver seamless digital experiences.
         </p>
         <div className="cta">
-          <Button
-            buttonText="Explore Projects"
-            primary
-            icon={<GoStar />}
-            fontSize=".8rem"
-          />
-          <Button
-            buttonText="Download My CV"
-            icon={<GoDownload />}
-            fontSize=".8rem"
-          />
+          <a href="#contact" onClick={handleClick}>
+            <Button
+              buttonText="Contact me"
+              primary
+              icon={<FaPhoneAlt />}
+              fontSize=".8rem"
+            />
+          </a>
+          <a
+            href="https://drive.google.com/uc?export=download&id=1WBqkPQSnKk1MPGvb478Giqzf8HTknxnE"
+            download
+          >
+            <Button
+              buttonText="Download My CV"
+              icon={<GoDownload />}
+              fontSize=".8rem"
+            />
+          </a>
         </div>
         <div className="socials">
           <a

@@ -3,6 +3,7 @@ import { MdOutlineMenu, MdClose } from "react-icons/md";
 import "@/assets/styles/navigation.css";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { useMobile } from "@/hooks/useMobile";
+import { scrollToSection } from "@/utils/scrollToSection";
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState("home");
@@ -16,23 +17,8 @@ const Navigation = () => {
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
-    const navbar = document.getElementById("navigation");
-    const rect = navbar?.getBoundingClientRect();
-    const { top: navbarTop, height: navbarHeight } = rect
-      ? rect
-      : { top: 0, height: 0 };
-    const section = document.getElementById(
-      e.currentTarget.innerText.toLowerCase()
-    );
-
-    if (section) {
-      toggleSideNav();
-      const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({
-        top: sectionTop - navbarHeight - navbarTop,
-        behavior: "smooth",
-      });
-    }
+    const target = e.currentTarget.innerText.toLowerCase();
+    scrollToSection(target, {onBeforeScroll: toggleSideNav})
   };
 
   useEffect(() => {
@@ -50,7 +36,6 @@ const Navigation = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
