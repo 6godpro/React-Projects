@@ -1,7 +1,7 @@
 #navigation {
   position: fixed;
   top: 2rem;
-  width: 50%;
+  width: 70%;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 40px;
@@ -57,10 +57,10 @@
 }
 
 .mobile-nav {
-  display: none;
+  display: flex;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   #navigation {
     top: 0;
     width: 100%;
@@ -87,9 +87,6 @@
   .show {
     opacity: 1;
     pointer-events: auto;
-  }
-  .mobile-nav {
-    display: flex;
   }
   .side-nav {
     width: 300px;
