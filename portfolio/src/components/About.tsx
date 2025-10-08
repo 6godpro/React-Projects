@@ -3,7 +3,7 @@ import Header from "./ui/Header";
 import { motion } from "framer-motion";
 
 const About = () => {
-  const skills = [
+  const highlights = [
     "GSAP, Framer Motion, & Chakra UI",
     "Performance Optimization",
     "Modern CSS & Tailwind",
@@ -31,17 +31,17 @@ const About = () => {
             think about them.
           </p>
         </div>
-        <div className="skill-section">
+        <div className="highlight-section">
           <h3>Key Highlights</h3>
-          <div className="skills">
-            {skills.map((skill, index) => (
+          <div className="highlights">
+            {highlights.map((skill, index) => (
               <motion.div
                 key={skill}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="skill"
+                className="highlight"
               >
                 {skill}
               </motion.div>
