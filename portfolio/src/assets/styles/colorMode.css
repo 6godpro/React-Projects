@@ -1,0 +1,32 @@
+.mode-btn {
+  width: 60px;
+  height: 30px;
+  background-color: var(--text-primary);
+  border-radius: 20px;
+  position: relative;
+  padding: 1.2rem 0;
+}
+
+#switch {
+  width: 30px;
+  height: 30px;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s, left 0.3s;
+}
+
+.switch-left {
+  left: 10%;
+}
+
+.switch-right {
+  left: 40%;
+}
