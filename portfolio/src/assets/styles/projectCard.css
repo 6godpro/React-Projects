@@ -1,20 +1,13 @@
 .project-card {
   width: 350px;
   height: 400px;
-  background-color: #0a0c0c;
-  /* background-color: red; */
-  color: var(--secondary-text);
   border-radius: 8px;
-  border: 1px solid var(--border-border);
+  border: 2px solid var(--border-border);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-}
-
-.project-card:active .image {
-  transform: scale(1.05);
 }
 
 .image {
@@ -23,8 +16,12 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  border-radius: 10px 10px 0 0;
+  border-radius: 8px 8px 0 0;
   transition: transform 0.5s ease-in-out;
+}
+
+.project-card:active .image {
+  transform: scale(1.05);
 }
 
 .details {
@@ -35,6 +32,7 @@
 
 .details h3 {
   margin-bottom: 0.5rem;
+  color: var(--heading);
 }
 
 .details p {
@@ -51,15 +49,14 @@
 }
 
 .actions a {
-  color: var(--secondary-text);
+  color: var(--text-primary);
   font-size: small;
   display: flex;
   align-items: center;
   gap: 1rem;
-  background: var(--background-color);
   padding: 0.3rem 1rem;
   border-radius: 8px;
-  border: 1px solid var(--border-border);
+  border: 2px solid var(--border-border);
   transition: transform 0.3s ease;
 }
 
@@ -69,8 +66,8 @@
   }
 
   .project-card a:hover {
-    background-color: var(--secondary-text);
-    color: var(--background-color);
+    background-color: var(--text-primary);
+    color: var(--bg-color);
   }
 }
 
@@ -86,12 +83,12 @@
 }
 
 .tech {
-  background: var(--secondary-text);
+  background: var(--text-primary);
   border-radius: 4px;
   font-size: x-small;
   cursor: pointer;
   padding: 0.2rem 0.4rem;
-  color: var(--background-color);
+  color: var(--bg-color);
 }
 
 @media screen and (min-width: 768px) {

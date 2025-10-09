@@ -1,7 +1,14 @@
 .header h1 {
   text-align: center;
   font-size: 1.7rem;
-  color: var(--secondary-text);
+  color: var(--heading);
+}
+
+#underline {
+  width: 150px;
+  height: 4px;
+  background: var(--heading);
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 768px) {

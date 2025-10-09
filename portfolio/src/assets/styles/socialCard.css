@@ -6,10 +6,8 @@
   justify-content: flex-start;
   align-items: center;
   gap: 1.5rem;
-  background-color: inherit;
-  border-radius: 10px;
-  border: 1px solid rgba(128, 128, 128, 0.187);
-  transition: box-shadow 0.3s ease-in-out;
+  border-radius: 8px;
+  border: 2px solid var(--border-border);
 }
 
 #info {
@@ -29,8 +27,8 @@
 }
 
 #social-logo {
-  background: var(--secondary-text);
-  color: #000;
+  background-color: var(--text-primary);
+  color: var(--bg-color);
   width: 40px;
   height: 40px;
   border-radius: 8px;

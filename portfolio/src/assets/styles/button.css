@@ -23,27 +23,38 @@
   left: 0;
   width: 0;
   height: 100%;
-  background: white;
   z-index: -1;
   transition: 0.5s;
+}
+
+@media (prefers-color-scheme: dark) {
+  .button button::before {
+    background-color: #fff;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .button button::before {
+    background-color: #000;
+  }
 }
 
 .button .secondary::before {
   position: absolute;
   right: 0;
-  background: rgba(128, 128, 128, 0.2);
+  background-color: rgba(128, 128, 128, 0.2);
 }
 
 .primary {
-  color: black;
-  background-color: var(--secondary-text);
+  color: var(--bg-color);
+  background-color: var(--text-primary);
   border: 1px solid var(--border-border);
 }
 
 .secondary {
   border: 1px solid var(--border-border);
-  color: var(--secondary-text);
-  background-color: var(--background-color);
+  color: var(--text-primary);
+  background-color: var(--bg-color);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -52,7 +63,7 @@
   }
 
   .secondary:hover {
-    color: var(--secondary-text);
+    color: var(--text-primary);
   }
 }
 

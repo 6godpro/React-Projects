@@ -12,7 +12,7 @@
   padding: 1rem 3%;
   z-index: 99999;
   transition: top 0.3s ease-in;
-  background: rgba(0,0,0, 0.4);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(2px);
 }
 
@@ -20,7 +20,7 @@
   font-size: x-large;
   font-weight: 600;
   cursor: pointer;
-  color: var(--secondary-text);
+  color: var(--text-primary);
 }
 
 .navbar {
@@ -32,7 +32,7 @@
 .navbar a {
   font-size: large;
   font-weight: 500;
-  color: var(--secondary-text);
+  color: var(--text-primary);
   margin: 0 1.5rem;
   text-align: center;
   position: relative;
@@ -47,7 +47,7 @@
   position: absolute;
   width: 0;
   height: 0.1rem;
-  background-color: var(--secondary-text);
+  background-color: var(--text-primary);
   bottom: -5px;
 }
 
@@ -78,11 +78,11 @@
     top: 0;
     left: 0;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.7);
     height: 100vh;
     width: 100vw;
     opacity: 0;
-    transition: opacity .3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
   }
   .show {
     opacity: 1;
@@ -103,9 +103,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid var(--secondary-text);
+    border-bottom: 2px solid var(--text-primary);
     padding: 0 1.5rem 1rem 1.5rem;
-    
   }
   .side-nav nav {
     margin-top: 2rem;
@@ -115,10 +114,10 @@
   .side-nav nav a {
     font-size: small;
     font-weight: 500;
-    color: var(--secondary-text);
+    color: var(--text-primary);
     margin-bottom: 1rem;
-    color: var(--secondary-text);
-    padding: .5rem 1rem;
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
     width: 100%;
     text-align: center;
   }
@@ -129,7 +128,7 @@
     font-size: medium;
     font-weight: 600;
     cursor: pointer;
-    color: var(--secondary-text);
+    color: var(--text-primary);
   }
   .side-nav-socials {
     width: 100%;
@@ -145,10 +144,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--secondary-text);
+    background-color: var(--text-primary);
     border: none;
     text-decoration: none;
-    color: var(--background-color);
+    color: var(--bg-color);
     border-radius: 100%;
     padding: 0.7rem;
   }
@@ -161,5 +160,23 @@
   .navbar a {
     font-size: medium;
     margin: 0 1rem;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  #navigation {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .logo,
+  .navbar a,
+  .mobile-nav {
+    color: #ededed;
+  }
+  .hover-animation,
+  .side-nav {
+    background-color: #ededed;
+  }
+  .side-nav-header {
+    color: var(--text-primary);
   }
 }

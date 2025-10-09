@@ -1,9 +1,51 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap");
 
-:root {
-  --secondary-text: #ededed;
-  --background-color: #0C0C0C;
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: #f9f9f9;
+    --text-primary: #111111;
+    --text-secondary: #005f99;
+
+    --primary-btn-color: #0c0c0c;
+    --border-border: rgba(0, 0, 0, 0.08);
+    --error-color: #d12a2a;
+    --heading: var(--text-secondary);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #0c0c0c;
+    --text-primary: #ededed;
+    --text-secondary: #005f99;
+
+    --primary-btn-color: #ededed;
+    --border-border: rgba(128, 128, 128, 0.187);
+    --error-color: #e43636;
+    --heading: var(--text-primary);
+  }
+}
+
+html.dark {
+  --bg-color: #0c0c0c;
+  --text-primary: #ededed;
+  --text-secondary: #005f99;
+
+  --primary-btn-color: #ededed;
   --border-border: rgba(128, 128, 128, 0.187);
+  --error-color: #e43636;
+  --heading: var(--text-primary);
+}
+
+html.light {
+    --bg-color: #f9f9f9;
+    --text-primary: #111111;
+    --text-secondary: #005f99;
+
+    --primary-btn-color: #0c0c0c;
+    --border-border: rgba(0, 0, 0, 0.08);
+    --error-color: #d12a2a;
+    --heading: var(--text-secondary);
 }
 
 * {
@@ -14,8 +56,8 @@
 }
 
 body {
-  background: var(--background-color);
-  color: var(--secondary-text);
+  background: var(--bg-color);
+  color: var(--text-primary);
 }
 
 a {
