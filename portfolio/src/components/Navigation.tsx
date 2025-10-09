@@ -4,12 +4,16 @@ import "@/assets/styles/navigation.css";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { useMobile } from "@/hooks/useMobile";
 import { scrollToSection } from "@/utils/scrollToSection";
+import ColorMode from "./ui/ColorMode";
+import { useThemeMode } from "@/hooks/useThemeMobile";
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState("home");
   const navLinks = ["home", "about", "projects", "contact"];
   const [open, setOpen] = useState(false);
   const isMobile = useMobile();
+
+  const { theme, toggleTheme } = useThemeMode();
 
   const toggleSideNav = () => {
     setOpen(!open);
@@ -18,7 +22,7 @@ const Navigation = () => {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     e.preventDefault();
     const target = e.currentTarget.innerText.toLowerCase();
-    scrollToSection(target, {onBeforeScroll: toggleSideNav})
+    scrollToSection(target, { onBeforeScroll: toggleSideNav });
   };
 
   useEffect(() => {
@@ -89,6 +93,7 @@ const Navigation = () => {
           </div>
         </div>
       )}
+      {!isMobile && <ColorMode theme={theme} toggleTheme={toggleTheme} />}
     </div>
   );
 };
