@@ -90,6 +90,11 @@ const Navigation = () => {
                 <FaGithub />
               </a>
             </div>
+            <div id="color-switch">
+              <span>
+                Change theme <ColorMode theme={theme} toggleTheme={toggleTheme} />
+              </span>
+            </div>
           </div>
         </div>
       )}

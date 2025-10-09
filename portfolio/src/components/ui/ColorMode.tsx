@@ -13,7 +13,7 @@ const ColorMode = ({ toggleTheme, theme }: Props) => {
         id="switch"
         className={theme === "light" ? "switch-left" : "switch-right"}
       >
-        {theme === "light" ? <FaSun size={16} /> : <FaMoon size={16} />}
+        {theme === "light" ? <FaSun size={16} color="gold"  /> : <FaMoon size={16} />}
       </div>
     </div>
   );

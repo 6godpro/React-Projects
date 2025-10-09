@@ -10,6 +10,8 @@
     --border-border: rgba(0, 0, 0, 0.08);
     --error-color: #d12a2a;
     --heading: var(--text-secondary);
+    --side-nav-bg-color: #f9f9f9;
+    --nav-bg-color: rgba(0, 0, 0, 0.7);
   }
 }
 
@@ -23,6 +25,8 @@
     --border-border: rgba(128, 128, 128, 0.187);
     --error-color: #e43636;
     --heading: var(--text-secondary);
+    --side-nav-bg-color: rgb(19, 19, 19);
+    --nav-bg-color: rgba(0, 0, 0, 0.4);
   }
 }
 
@@ -35,17 +39,21 @@ html.dark {
   --border-border: rgba(128, 128, 128, 0.187);
   --error-color: #e43636;
   --heading: var(--text-secondary);
+  --side-nav-bg-color: rgb(19, 19, 19);
+  --nav-bg-color: rgba(0, 0, 0, 0.4);
 }
 
 html.light {
-    --bg-color: #f9f9f9;
-    --text-primary: #111111;
-    --text-secondary: #0280ce;
+  --bg-color: #f9f9f9;
+  --text-primary: #111111;
+  --text-secondary: #0280ce;
 
-    --primary-btn-color: #0c0c0c;
-    --border-border: rgba(0, 0, 0, 0.08);
-    --error-color: #d12a2a;
-    --heading: var(--text-secondary);
+  --primary-btn-color: #0c0c0c;
+  --border-border: rgba(0, 0, 0, 0.08);
+  --error-color: #d12a2a;
+  --heading: var(--text-secondary);
+  --side-nav-bg-color: #f9f9f9;
+  --nav-bg-color: rgba(0, 0, 0, 0.7);
 }
 
 * {
