@@ -4,7 +4,7 @@
   :root {
     --bg-color: #f9f9f9;
     --text-primary: #111111;
-    --text-secondary: #005f99;
+    --text-secondary: #0280ce;
 
     --primary-btn-color: #0c0c0c;
     --border-border: rgba(0, 0, 0, 0.08);
@@ -17,30 +17,30 @@
   :root {
     --bg-color: #0c0c0c;
     --text-primary: #ededed;
-    --text-secondary: #005f99;
+    --text-secondary: #0280ce;
 
     --primary-btn-color: #ededed;
     --border-border: rgba(128, 128, 128, 0.187);
     --error-color: #e43636;
-    --heading: var(--text-primary);
+    --heading: var(--text-secondary);
   }
 }
 
 html.dark {
   --bg-color: #0c0c0c;
   --text-primary: #ededed;
-  --text-secondary: #005f99;
+  --text-secondary: #0280ce;
 
   --primary-btn-color: #ededed;
   --border-border: rgba(128, 128, 128, 0.187);
   --error-color: #e43636;
-  --heading: var(--text-primary);
+  --heading: var(--text-secondary);
 }
 
 html.light {
     --bg-color: #f9f9f9;
     --text-primary: #111111;
-    --text-secondary: #005f99;
+    --text-secondary: #0280ce;
 
     --primary-btn-color: #0c0c0c;
     --border-border: rgba(0, 0, 0, 0.08);
