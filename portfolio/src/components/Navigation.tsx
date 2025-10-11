@@ -5,7 +5,7 @@ import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { useMobile } from "@/hooks/useMobile";
 import { scrollToSection } from "@/utils/scrollToSection";
 import ColorMode from "./ui/ColorMode";
-import { useThemeMode } from "@/hooks/useThemeMobile";
+import { useThemeMode } from "@/hooks/useTheme";
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState("home");
