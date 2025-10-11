@@ -1,30 +1,37 @@
 import { useEffect, useState } from "react";
 
-export const useThemeMode = () => {
-  const [theme, setTheme] = useState<"light" | "dark" | null>(null);
-  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
+export type ThemeMode = "light" | "dark";
+
+export function useThemeMode() {
+  const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+  const [theme, setTheme] = useState<ThemeMode>(() => {
+    const storedTheme = localStorage.getItem("theme") as ThemeMode | null; //user's preference
+    const osTheme = mediaQuery.matches ? "dark" : "light"; // OS theme
+
+    return storedTheme ?? osTheme;
+  });
+
+  useEffect(() => {
+    const handleSystemChange = (e: MediaQueryListEvent) => {
+      const currentOsMode = e.matches ? "dark" : "light";
+      setTheme(currentOsMode);
+    };
+
+    mediaQuery.addEventListener("change", handleSystemChange);
+    return () => mediaQuery.removeEventListener("change", handleSystemChange);
+  }, []);
 
   useEffect(() => {
     const html = document.documentElement;
-    let storedTheme = localStorage.getItem("theme");
-
-    const resolvedTheme = (theme ??
-      storedTheme ??
-      (window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light")) as "light" | "dark";
 
     html.classList.remove("light", "dark");
-    html.classList.add(resolvedTheme);
-
-    if (storedTheme !== resolvedTheme) {
-      localStorage.setItem("theme", resolvedTheme);
-    }
-
-    if (theme !== resolvedTheme) {
-      setTheme(resolvedTheme);
-    }
+    html.classList.add(theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
-  return { theme, toggleTheme };
-};
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
+  return { theme, setTheme, toggleTheme };
+}
