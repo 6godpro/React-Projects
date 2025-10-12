@@ -18,14 +18,14 @@ const Projects = () => {
       image: "/landing_page.png",
     },
     {
-      title: "Task Management App",
+      title: "BuyBase",
       description:
-        "A productivity app with drag-and-drop functionality, real-time updates, and collaborative features.",
-      tech: ["Next.js", "React", "MongoDB", "Socket.io"],
-      github: "",
-      demo: "",
+        "Full-stack e-commerce app using React, Chakra UI, and FastAPI with real-time cart updates, authentication, and order management.",
+      tech: ["Tailwind CSS", "React", "TypeScript", "framer-motion"],
+      github: "https://github.com/6godpro/buybase",
+      demo: "https://buybase.vercel.app",
       image:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop&crop=top",
+        "/buybase_landing.png",
     },
     {
       title: "Weather Dashboard",
