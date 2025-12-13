@@ -14,7 +14,7 @@ const Projects = () => {
         "A responsive web platform for Radiance Reach Charity Foundation — empowering communities through education, healthcare, and outreach initiatives.",
       tech: ["React", "TypeScript", "Tailwind CSS", "Node.js"],
       github: "https://github.com/6godpro/Radiance-Reach-Foundation/",
-      demo: "https://radiance-reach-foundation.pages.dev/",
+      demo: "https://www.radiancereachcharityfoundation.com",
       image: "/landing_page.png",
     },
     {
