@@ -1,4 +1,4 @@
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 interface MessageProps {
   name: string;
@@ -6,12 +6,16 @@ interface MessageProps {
   message: string;
 }
 
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TEMPLATE_ID=import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const PUB_KEY=import.meta.env.VITE_EMAILJS_PUB_KEY
+
 const sendMessage = async (data: MessageProps) => {
   await emailjs.send(
-    "service_ichkf3d",
-    "template_9mv0bjq",
+    SERVICE_ID,
+    TEMPLATE_ID,
     { from_email: data.email, message: data.message },
-    "8fyGZVkg62uXJ5QNP"
+    PUB_KEY
   );
 };
 
