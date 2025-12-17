@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Navigation from "./components/Navigation";
 import Projects from "./components/Projects";
-import {ToastContainer} from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
