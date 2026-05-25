@@ -28,14 +28,14 @@ const Projects = () => {
         "/buybase_landing.png",
     },
     {
-      title: "Weather Dashboard",
+      title: "Rapid Response Restoration",
       description:
-        "A responsive weather application with interactive charts and location-based forecasts.",
-      tech: ["React", "API Integration", "Chart.js", "CSS3"],
-      github: "",
-      demo: "",
+        "A corporate website built for Rapid Response Restoration company. Built to inspire confidence, showcase real results, and make reaching out feel easy. Because property restoration is stressful enough already.",
+      tech: ["React", "Tanstack", "Tailwind", "Framer Motion"],
+      github: "https://github.com/6godpro/rapid-response-restoration",
+      demo: "https://rapid-response-restoration.erickson5115.workers.dev/",
       image:
-        "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=600&fit=crop&crop=top",
+        "/rapid-response-restoration.png",
     },
   ];
   return (
